@@ -4,7 +4,7 @@ version: '2'
 services:
   base: &default
     build: .
-    env_file: .envrc
+    env_file: envfile
     volumes:
       - ./settings/:/settings:rw
     command: echo

@@ -9,11 +9,10 @@ codenize.tools で公開されているツール類をdocker に閉じ込めた�
 使い方
 ----
 
-1. イメージの作成 または pull
-2. envfile.template を envfile にコピーし、AWS_ACCESS_KEYS/AWS_SECRET_ACCESS_KEYを記述
-3. docker-compose を実行(個別にdocker を実行しても良い)
-4. settings 以下にファイルができていることを確認する
-5. 更新したい場合は docker-compose.yml を修正するか、別に yml ファイルを用意して読み込ませる
+1. envfile.template を envfile にコピーし、AWS_ACCESS_KEYS/AWS_SECRET_ACCESS_KEYを記述
+2. docker-compose を実行(個別にdocker を実行しても良い)
+3. settings 以下にファイルができていることを確認する
+4. 更新したい場合は docker-compose.yml を修正するか、別に yml ファイルを用意して読み込ませる
 
 ### Roadworker (Route53)
 
@@ -54,4 +53,4 @@ $ docker-compose run shell
 注意事項
 ----
 
-envrc の値は ' などで囲まないでください
+envfile の値は ' などで囲まないでください
