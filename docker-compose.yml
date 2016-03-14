@@ -1,0 +1,28 @@
+# vi: set ft=yaml et ts=2 sw=2 sts=0:
+
+version: '2'
+services:
+  base: &default
+    build: .
+    env_file: .envrc
+    volumes:
+      - ./settings/:/settings:rw
+    command: echo
+  route53:
+    <<: *default
+    command: roadwork -e -o /settings/Routefile
+  sg:
+    <<: *default
+    command: piculet -e -o /settings/Groupfile
+  elb:
+    <<: *default
+    command: kelbim -e -o /settings/ELBfile
+  iam:
+    <<: *default
+    command: miam -e -o /settings/IAMfile
+  eip:
+    <<: *default
+    command: eipmap -e -o /settings/EIPfile
+  shell:
+    <<: *default
+    command: sh
